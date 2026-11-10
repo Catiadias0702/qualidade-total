@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TÉCNICO EM QUALIDADE</title>
+<style>
+/* PALETA: vermelho extraído do logotipo SENAI enviado; ajuste conforme o Manual de Marcas / Pantone oficial */
+:root{--vermelho:#da251c;--vinho:#871611;--vermelho2:#E8574B;--grafite:#2B2B2B;--cinza:#6B7280;--fundo:#F6F6F6;--tx:#222}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:"Segoe UI",Arial,sans-serif;background:var(--fundo);color:var(--tx)}
+header{background:var(--vermelho);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 18px;position:sticky;top:0;z-index:5;border-bottom:4px solid var(--grafite)}
+.logo{display:flex;align-items:center;gap:8px;font-weight:900;font-size:1.6rem;letter-spacing:2px}
+.logo i{display:block;width:14px;height:28px;background:var(--grafite);border-radius:3px;transform:skewX(-12deg)}
+.logo img{height:48px;display:block}
+#pic{width:92px;height:92px;margin:6px auto;border-radius:50%;background:#fff;border:4px solid var(--vermelho);display:flex;align-items:center;justify-content:center;font-size:3.1rem;box-shadow:0 3px 8px #0003}
+main{width:100%;max-width:900px;margin:0 auto;padding:18px}
+h1{font-size:2rem;margin:.3em 0;color:var(--vermelho)}
+.box{background:#fff;border-radius:14px;padding:18px;margin:12px 0;box-shadow:0 2px 8px #0b2a5a22;border-left:6px solid var(--vermelho)}
+label{display:block;margin:12px 0 6px;font-weight:bold;color:var(--vermelho)}
+input,select{width:100%;padding:12px;border-radius:10px;border:2px solid #b9c8dc;font-size:1rem;background:#fff;color:var(--tx)}
+.btn{background:var(--grafite);color:#fff;border:0;border-radius:12px;padding:14px 26px;font-size:1.1rem;font-weight:bold;cursor:pointer;box-shadow:0 4px 0 #7d0f0a}
+.btn.ghost{background:#fff;color:var(--vermelho);box-shadow:none;border:2px solid var(--vermelho);padding:8px 14px;font-size:.95rem}
+.btn:active{transform:translateY(3px)}
+.hide{display:none}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font-weight:bold}
+.tag{background:var(--vermelho);color:#fff;border-radius:20px;padding:4px 12px;font-size:.85rem}
+header .tag{background:#ffffff26}
+.bar{height:12px;background:#cbd8e8;border-radius:8px;overflow:hidden;margin:10px 0}
+#fill{height:100%;width:100%;background:var(--vermelho2);transition:width .1s linear}
+#q{font-size:1.3rem;line-height:1.4;text-align:center;background:#fff;color:var(--tx);border-radius:14px;padding:22px;margin:10px 0;border:2px solid var(--vermelho);box-shadow:0 2px 8px #0b2a5a22}
+.opts{display:grid;gap:10px}
+.opt{display:flex;align-items:center;gap:12px;color:#fff;border:0;border-radius:12px;padding:14px;font-size:1.05rem;text-align:left;cursor:pointer;box-shadow:0 4px 0 #0005;font-family:inherit}
+.opt b{background:#0003;border-radius:8px;min-width:42px;height:38px;display:flex;align-items:center;justify-content:center}
+.opt:disabled{cursor:default}
+.opt.ok{outline:5px solid var(--grafite)}
+.opt.dim{opacity:.35}
+.c0{background:var(--vinho)}.c1{background:var(--vermelho)}.c2{background:var(--grafite)}.c3{background:var(--cinza)}.c4{background:#B8433A}
+#fb{text-align:center;font-size:1.15rem;font-weight:bold;min-height:2.6em;margin:12px 0;color:var(--vermelho)}
+.big{font-size:3rem;font-weight:bold;text-align:center;color:var(--vermelho)}
+table{width:100%;border-collapse:collapse}td,th{padding:7px;text-align:left;border-bottom:1px solid #d5e0ee}
+.err{background:var(--fundo);border-radius:10px;padding:10px;margin:8px 0;font-size:.95rem}
+:focus-visible{outline:3px solid var(--grafite)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="logo" id="logo"><i></i>SENAI</div><span></span><span class="tag" id="best">🏆 Melhor: —</span></header>
+<main>
+<section id="menu">
+  <h1>🎯 TÉCNICO EM QUALIDADE</h1>
+  <p>Plano de curso completo · responda rápido, acerte mais e some pontos!</p>
+  <div class="box">
+    <label for="nome">Seu nome</label>
+    <input id="nome" maxlength="20" placeholder="Digite seu nome">
+    <label for="uc">Unidade curricular</label>
+    <select id="uc">
+      <option value="*">🎲 Todas (misturadas)</option><option value="P">Performance Pessoal e Profissional</option><option value="L">Linguagens em Multimeios</option><option value="F">Ferramentas Digitais para o Mercado de Trabalho</option><option value="T">Tendências e Inovações</option><option value="Q">Fundamentos da Qualidade</option><option value="M">Sistemas de Medição</option><option value="D">Análise e Diagnóstico de Processos</option><option value="S">Planejamento e Implementação do SGQ</option><option value="C">Melhoria Contínua e Conformidade do SGQ</option><option value="U">Auditoria da Qualidade</option><option value="A">Aprimoramento de Processos</option>
+    </select>
+    <label for="modo">Modo</label>
+    <select id="modo"><option value="j">🎮 Jogo (com tempo e pontos)</option><option value="e">📖 Estudo (sem tempo, com a resposta certa na hora)</option></select>
+    <label for="qtd">Número de perguntas</label>
+    <select id="qtd"><option>10</option><option>15</option><option>20</option><option>30</option><option>50</option><option value="999">Todas</option></select>
+    <label for="tempo">Tempo por pergunta</label>
+    <select id="tempo"><option value="20">20 segundos</option><option value="30" selected>30 segundos</option><option value="45">45 segundos</option><option value="60">60 segundos</option></select>
+    <p><button class="btn" id="go">▶ Jogar</button></p>
+  </div>
+  <div class="box"><b>🏆 Ranking neste aparelho</b><div id="rank">Ainda sem partidas.</div><p style="font-size:.85rem">O ranking fica fixado neste aparelho e só pontua no modo Jogo.</p><p><button class="btn ghost clr">🗑 Zerar ranking</button></p></div>
+  <p class="tag" style="display:inline-block">Teclado: A, B, C, D, E para responder · Enter para avançar</p>
+</section>
+
+<section id="game" class="hide">
+  <div class="top"><button class="btn ghost" id="back">⟵ Voltar ao início</button><span class="tag" id="prog"></span><span class="tag" id="uctag"></span><span class="tag" id="pts"></span></div>
+  <div class="bar"><div id="fill"></div></div>
+  <div id="pic" aria-hidden="true"></div>
+  <div id="q"></div>
+  <div class="opts" id="opts"></div>
+  <div id="fb" aria-live="polite"></div>
+  <p style="text-align:center"><button class="btn hide" id="next">Próxima</button></p>
+</section>
+
+<section id="end" class="hide">
+  <h1>Fim de jogo!</h1>
+  <div class="box"><div class="big" id="score"></div><p id="sum" style="text-align:center"></p></div>
+  <div class="box"><b>Desempenho por unidade</b><table id="byuc"></table></div>
+  <div class="box"><b>🏆 Ranking de melhores pontuações</b><div id="rank2"></div><p><button class="btn ghost clr">🗑 Zerar ranking</button></p></div>
+  <div class="box"><b>📝 Para revisar</b><div id="errs"></div></div>
+  <p style="text-align:center"><button class="btn" id="again">🔄 Reiniciar estudos</button></p>
+</section>
+</main>
+
+<script>
+/* BANCO DE QUESTÕES — formato: [unidade, pergunta, CORRETA, errada1, errada2, errada3, errada4]
+   Unidades: P = Performance Pessoal e Profissional · T = Tendências e Inovações · A = Aprimoramento de Processos
+   A posição da alternativa correta (A–E) é sorteada a cada pergunta. Para ampliar, basta acrescentar linhas. */
+const UCN={P:"Performance Pessoal e Profissional",L:"Linguagens em Multimeios",F:"Ferramentas Digitais para o Mercado de Trabalho",T:"Tendências e Inovações",Q:"Fundamentos da Qualidade",M:"Sistemas de Medição",D:"Análise e Diagnóstico de Processos",S:"Planejamento e Implementação do SGQ",C:"Melhoria Contínua e Conformidade do SGQ",U:"Auditoria da Qualidade",A:"Aprimoramento de Processos"};
+const BANK=[
+["P","O Estatuto da Criança e do Adolescente (ECA) é a Lei nº:","8.069/1990","12.852/2013","13.467/2017","9.394/1996","5.452/1943"],
+["P","O Estatuto da Juventude é a Lei nº:","12.852/2013","8.069/1990","10.741/2003","13.429/2017","11.788/2008"],
+["P","Qual das opções é um exemplo de hard skill?","Dominar uma linguagem de programação ou um software técnico","Empatia","Comunicação interpessoal","Resiliência emocional","Trabalho em equipe"],
+["P","Habilidades como empatia, comunicação e trabalho em equipe são classificadas como:","Soft skills interpessoais","Hard skills","Soft skills intrapessoais","Habilidades cognitivas","Competências exclusivamente técnicas"],
+["P","Entre os tipos de contrato de trabalho por prazo determinado está o:","Trabalho intermitente","Contrato por prazo indeterminado","Trabalho autônomo","Aposentadoria","Licença-maternidade"],
+["P","A geração conhecida como Y também é chamada de:","Millennials","Baby boomers","Alpha","Geração Z","Geração X"],
+["P","A inteligência múltipla ligada ao autoconhecimento e à gestão das próprias emoções é a:","Intrapessoal","Interpessoal","Naturalista","Espacial","Musical"],
+["P","A inteligência que envolve compreender e se relacionar bem com outras pessoas é a:","Interpessoal","Intrapessoal","Lógico-matemática","Corporal-cinestésica","Existencial"],
+["P","Na técnica do brainwriting, as ideias são:","Escritas individualmente no papel e depois compartilhadas e combinadas","Apenas faladas em voz alta pelo líder","Votadas antes de serem registradas","Descartadas se forem diferentes","Registradas somente por um relator"],
+["P","A ferramenta criativa dos Seis Chapéus serve para:","Analisar um assunto sob diferentes perspectivas de pensamento","Calcular o salário líquido","Mapear processos industriais","Definir o tamanho de um mercado","Registrar a jornada de trabalho"],
+["P","O pensamento criativo divergente consiste em:","Gerar o maior número possível de ideias e alternativas","Escolher a melhor ideia entre as disponíveis","Aplicar regras fixas sem questionar","Repetir soluções já testadas","Evitar novas perspectivas"],
+["P","O intraempreendedor se diferencia do empreendedor porque:","Inova e empreende dentro de uma organização já existente","Abre sempre um negócio próprio","Trabalha sem objetivos definidos","Atua apenas como autônomo","Não assume iniciativas"],
+["P","O salário líquido corresponde a:","Salário bruto menos os descontos legais","Salário bruto mais horas extras","Salário bruto mais benefícios","Apenas o 13º salário","O valor dos investimentos mensais"],
+["P","O cooperativismo é caracterizado por:","Associação de pessoas com ajuda mútua e objetivos econômicos e sociais comuns","Competição entre os sócios pelo lucro individual","Controle do negócio por um único proprietário","Contratação exclusiva de estagiários","Atuação sem participação dos associados"],
+["T","O ciclo da inovação segue a sequência:","Criatividade, invenção e inovação","Invenção, inovação e criatividade","Inovação, criatividade e invenção","Monitoramento, ideação e invenção","Ideação, avaliação e criatividade"],
+["T","A inovação incremental caracteriza-se por:","Melhorias graduais em produtos, serviços ou processos já existentes","Criar um mercado totalmente novo","Substituir completamente uma tecnologia","Descartar o que já existe","Ser sempre de alto risco e custo"],
+["T","A inovação disruptiva é aquela que:","Cria novos mercados e pode tornar produtos e modelos tradicionais obsoletos","Faz pequenos ajustes em produtos","Mantém o modelo de negócio inalterado","Apenas reduz custos de embalagem","Não altera o comportamento do consumidor"],
+["T","Uma inovação radical envolve:","Uma ruptura tecnológica profunda, com um conceito totalmente novo","Pequenos ajustes de design","Reaproveitamento de peças","Apenas mudança de preço","Melhoria na cor do produto"],
+["T","Na ordem do processo de inovação, a etapa que vem logo após a Implementação é:","Monitoramento","Ideação","Desenvolvimento","Invenção","Criatividade"],
+["T","A etapa em que as ideias são geradas e selecionadas no processo de inovação é a:","Ideação","Monitoramento","Implementação","Avaliação dos resultados","Descarbonização"],
+["T","A análise SWOT (FOFA) avalia:","Forças, fraquezas, oportunidades e ameaças","Custos, prazos, riscos e metas","Clientes, fornecedores, produtos e preços","Planejar, fazer, checar e agir","Quem, o quê, onde e quando"],
+["T","O mapa mental é uma ferramenta que:","Organiza ideias de forma visual e radial a partir de um tema central","Mede o desempenho financeiro","Calcula emissões de carbono","Registra a jornada de trabalho","Substitui o plano de negócios"],
+["T","A sigla ESG refere-se a:","Ambiental, Social e Governança","Econômico, Social e Global","Energia, Sustentabilidade e Gestão","Eficiência, Segurança e Garantia","Estratégia, Serviço e Growth"],
+["T","A economia circular propõe:","Manter produtos e materiais em uso pelo maior tempo possível, reduzindo desperdício","Extrair, produzir, consumir e descartar","Aumentar a produção de resíduos","Usar matéria-prima apenas uma vez","Eliminar a reciclagem"],
+["T","A descarbonização tem como foco:","Reduzir as emissões de carbono na atmosfera","Aumentar o consumo de combustíveis fósseis","Ampliar a produção de plástico","Substituir a energia limpa por carvão","Eliminar o uso da computação"],
+["T","A Internet das Coisas (IoT) consiste em:","Objetos conectados à internet que coletam e trocam dados","Uma rede social profissional","Impressão de objetos em camadas","Um tipo de moeda digital","Um software de planilhas"],
+["T","O blockchain é:","Um registro digital distribuído e seguro, organizado em blocos encadeados","Um tipo de realidade virtual","Uma técnica de brainstorming","Uma impressora 3D","Um método de coaching"],
+["T","A impressão 3D funciona por meio de:","Manufatura aditiva, depositando material camada por camada","Corte de blocos de metal","Fundição em moldes fixos","Simulação em realidade virtual","Armazenamento em nuvem"],
+["T","A realidade aumentada se diferencia da realidade virtual porque:","Sobrepõe elementos digitais ao ambiente real","Substitui totalmente o ambiente real por um virtual","Não usa dispositivos","Só funciona sem internet","Depende de impressoras 3D"],
+["A","No Scrum, os três papéis são:","Product Owner, Scrum Master e Time de Desenvolvimento","Gerente, Supervisor e Analista","Cliente, Fornecedor e Auditor","Líder, Coach e Mentor","Planejador, Executor e Verificador"],
+["A","O evento do Scrum em que a equipe avalia como trabalhou para melhorar na próxima Sprint é a:","Retrospectiva da Sprint","Planejamento da Sprint","Daily Scrum","Refinamento do Backlog","Entrega do produto final"],
+["A","Qual é um artefato do Scrum?","Product Backlog","Daily Scrum","Retrospectiva","Scrum Master","Sprint Review"],
+["A","Qual das opções apresenta etapas do Design Thinking?","Imersão, ideação, prototipação e desenvolvimento","Planejar, fazer, checar e agir","Forças, fraquezas, oportunidades e ameaças","Quem, o quê, onde e quando","Coletar, estratificar, medir e arquivar"],
+["A","Os pilares do Design Thinking são:","Empatia, colaboração e experimentação","Custo, prazo e escopo","Planejamento, controle e auditoria","Lucro, volume e margem","Hierarquia, rotina e regra"],
+["A","O mapa de empatia ajuda a:","Entender o que o usuário pensa, sente, vê, ouve e faz","Calcular o retorno financeiro","Definir o cronograma da Sprint","Medir o tempo de ciclo","Controlar o estoque"],
+["A","No ciclo PDCA, a letra C (Check) significa:","Verificar os resultados comparando com o planejado","Criar o plano de ação","Corrigir defeitos sem analisar","Contratar pessoas","Comunicar a diretoria"],
+["A","O PDCA é composto pelas etapas:","Planejar, Fazer, Checar e Agir","Pensar, Decidir, Comunicar e Avaliar","Priorizar, Delegar, Controlar e Auditar","Planejar, Distribuir, Concluir e Arquivar","Prever, Diagnosticar, Corrigir e Aprovar"],
+["A","A sigla 5W2H é usada para:","Elaborar planos de ação respondendo o quê, por quê, onde, quando, quem, como e quanto custa","Analisar forças e fraquezas","Mapear emoções do cliente","Definir papéis do Scrum","Calcular a produtividade da máquina"],
+["A","O Kanban é uma ferramenta que:","Visualiza o fluxo de trabalho em quadro, com colunas como A fazer, Fazendo e Feito","Mede a satisfação do cliente","Substitui o planejamento financeiro","Realiza auditorias de certificação","Calcula o salário líquido"],
+["A","O Lean busca principalmente:","Eliminar desperdícios e gerar valor para o cliente","Aumentar estoques","Ampliar etapas do processo","Reduzir a comunicação","Evitar a melhoria contínua"],
+["A","A estratificação consiste em:","Dividir os dados em grupos ou categorias para identificar a origem do problema","Eliminar dados que não agradam","Reunir todos os dados em um único número","Registrar apenas a média","Substituir indicadores por opiniões"],
+["A","Em comparação com as metodologias tradicionais, as metodologias ágeis priorizam:","Entregas incrementais e adaptação rápida a mudanças","Planejamento rígido e fechado desde o início","Documentação extensa antes de qualquer entrega","Entrega única ao final do projeto","Ausência de feedback do cliente"],
+["A","O storyboard, usado no Design Thinking, é:","Uma representação visual em quadros da sequência de uma experiência ou solução","Um gráfico de controle estatístico","Uma planilha de custos","Um relatório de auditoria","Um contrato de trabalho"],
+["P","Na jornada de trabalho, o pagamento adicional por tempo trabalhado além do horário normal chama-se:","Hora extra","Licença","Afastamento","Aposentadoria","Descanso semanal"],
+["P","O contrato de aprendizagem é classificado como contrato de prazo:","Determinado","Indeterminado","Autônomo","Intermitente por natureza","Voluntário, sem vínculo"],
+["P","A Declaração Universal dos Direitos Humanos é um documento que:","Estabelece direitos fundamentais a todas as pessoas","Regula apenas a jornada de trabalho","Trata somente de contratos de estágio","Define regras da previdência privada","Aplica-se apenas a adolescentes"],
+["P","Ao diferenciar emprego de trabalho, entende-se que o emprego:","É uma forma de trabalho com vínculo formal","É toda atividade humana, remunerada ou não","Não envolve remuneração","É sempre autônomo","Existe somente em cooperativas"],
+["P","Pensamento crítico e resolução de problemas são exemplos de soft skills:","Cognitivas","Interpessoais","Intrapessoais","Técnicas (hard skills)","Financeiras"],
+["P","O currículo que apresenta o profissional em formato de gravação em vídeo é o:","Vídeo-currículo","Currículo clássico","Mini currículo","Plano de carreira","Perfil de rede social"],
+["P","Entre as ferramentas de desenvolvimento de carreira estão:","Coaching profissional, orientação profissional e redes sociais profissionais","Kanban, Scrum e PDCA","SWOT, 5W2H e Lean","Blockchain e metaverso","Hora extra e licença"],
+["P","No plano de ação do empreendedor, a análise de mercado serve para:","Conhecer clientes, concorrentes e oportunidades do negócio","Calcular o salário líquido","Definir o horário de trabalho","Escolher o tipo de currículo","Registrar o afastamento"],
+["P","A geração conhecida como baby boomers é a:","Nascida no pós-guerra, anterior à Geração X","Nascida após 2010","Totalmente digital, a Geração Z","Dos Millennials","Geração Alpha"],
+["P","A inteligência que envolve habilidades com palavras, leitura e escrita é a:","Linguística","Espacial","Musical","Naturalista","Corporal-cinestésica"],
+["P","O hemisfério direito do cérebro está associado, de forma geral, a:","Criatividade, intuição e visão global","Apenas cálculos matemáticos","Análise lógica sequencial exclusivamente","Controle da jornada de trabalho","Memorização de leis"],
+["P","Ver o fracasso como aprendizagem significa:","Usar os erros como oportunidade de crescimento","Evitar qualquer risco","Culpar os outros pelos erros","Desistir diante da falha","Ignorar os resultados"],
+["P","Na gestão de dívidas, uma atitude adequada é:","Priorizar as dívidas com juros mais altos e renegociar quando necessário","Fazer novos empréstimos sem planejamento","Ignorar os juros","Pagar apenas o mínimo indefinidamente","Usar o limite do cartão para quitar o cartão"],
+["P","A previdência privada é:","Uma forma de planejamento financeiro para a aposentadoria","Um tipo de contrato de estágio","Um benefício obrigatório do aprendiz","Um tipo de currículo","Uma forma de licença"],
+["T","Em uma empresa, a inovação de processos refere-se a:","Novas formas de produzir ou executar atividades","Apenas novos produtos físicos","Somente mudança de logotipo","Exclusivamente serviços digitais","Mudança de endereço da empresa"],
+["T","A invenção, no ciclo da inovação, corresponde a:","Criar algo novo, sem necessariamente chegar ao mercado","Levar a ideia ao mercado gerando valor","Apenas ter uma boa ideia","Monitorar resultados","Descartar soluções antigas"],
+["T","A etapa de Avaliação dos resultados no processo de inovação serve para:","Verificar se a inovação atingiu os objetivos","Gerar ideias iniciais","Desenvolver o protótipo","Iniciar a implementação","Mapear o mapa mental"],
+["T","Na análise SWOT, forças e fraquezas são fatores:","Internos à organização","Externos à organização","Sempre financeiros","Apenas legais","Ligados somente à concorrência"],
+["T","Na análise SWOT, oportunidades e ameaças são fatores:","Externos à organização","Internos à organização","Apenas de produção","Somente de pessoas","Controlados pela empresa"],
+["T","O G de ESG (Governança) refere-se a:","Práticas de gestão, ética, transparência e conformidade","Gases de efeito estufa","Geração de energia","Garantia de produtos","Globalização de mercados"],
+["T","Um exemplo de aplicação da economia circular é:","Reaproveitar e reciclar materiais no ciclo produtivo","Descartar produtos após um único uso","Aumentar a extração de recursos naturais","Produzir sem planejamento de resíduos","Substituir o reuso por aterro"],
+["T","A Inteligência Artificial (IA) é:","A capacidade de sistemas executarem tarefas que normalmente exigem inteligência humana","Um tipo de impressora","Um registro em blocos","Uma rede de sensores físicos apenas","Um tipo de óculos de realidade virtual"],
+["T","Big data refere-se a:","Grandes volumes de dados que exigem tecnologias específicas para análise","Pequenas planilhas","Um tipo de moeda digital","Uma ferramenta de brainstorming","Um modelo de impressora"],
+["T","O Machine Learning (aprendizado de máquina) permite que sistemas:","Aprendam com dados e melhorem seu desempenho","Funcionem sem qualquer dado","Sejam programados sem algoritmos","Operem apenas offline","Substituam a internet"],
+["T","A computação em nuvem caracteriza-se por:","Acessar armazenamento e serviços pela internet, sem depender de infraestrutura local","Guardar dados apenas em papel","Funcionar exclusivamente sem rede","Imprimir objetos em camadas","Depender de uma única máquina"],
+["T","A nanotecnologia atua com:","Materiais e estruturas em escala nanométrica","Grandes máquinas industriais","Dados em nuvem","Realidade virtual","Moedas digitais"],
+["T","O metaverso pode ser descrito como:","Ambientes virtuais imersivos e compartilhados","Um tipo de planilha","Uma norma de qualidade","Um método de contabilidade","Um sistema de impressão"],
+["T","A realidade virtual (RV) caracteriza-se por:","Imergir o usuário em um ambiente totalmente digital","Sobrepor informações ao mundo real","Imprimir objetos","Registrar transações em blocos","Armazenar dados na nuvem"],
+["A","O mapeamento de processos tem como objetivo:","Representar as etapas do processo para entendê-lo e identificar melhorias","Substituir os indicadores","Eliminar a equipe","Definir o salário dos colaboradores","Auditar apenas fornecedores"],
+["A","No Scrum, o papel responsável por priorizar o Product Backlog e maximizar o valor do produto é o:","Product Owner","Scrum Master","Time de Desenvolvimento","Auditor","Cliente final"],
+["A","O Scrum Master atua principalmente:","Facilitando o Scrum e removendo impedimentos da equipe","Definindo sozinho todas as tarefas","Aprovando o orçamento","Escrevendo todo o código","Substituindo o Product Owner"],
+["A","A Daily Scrum é uma reunião:","Curta e diária para alinhar o progresso e identificar impedimentos","Mensal de avaliação financeira","Realizada apenas ao fim do projeto","Exclusiva da diretoria","Para aprovar contratos"],
+["A","A Sprint Review serve para:","Apresentar o incremento e coletar feedback das partes interessadas","Avaliar o desempenho individual para punição","Planejar a próxima Sprint apenas","Definir o salário da equipe","Encerrar o projeto"],
+["A","No ciclo PDCA, a letra A (Act) corresponde a:","Agir corretivamente e padronizar as melhorias bem-sucedidas","Planejar metas","Executar o plano","Verificar resultados","Arquivar documentos"],
+["A","Na etapa P (Plan) do PDCA, o time:","Identifica o problema, define metas e elabora o plano de ação","Padroniza as ações","Executa o plano em larga escala","Compara resultados com metas","Encerra o projeto"],
+["A","No 5W2H, o segundo H refere-se a:","How much (quanto custa)","How (como)","Who (quem)","Where (onde)","When (quando)"],
+["A","O brainstorming é uma ferramenta utilizada para:","Gerar ideias em grupo, sem julgamento inicial","Criticar as ideias logo no início","Calcular indicadores","Registrar o fluxo financeiro","Realizar auditorias"],
+["A","Na etapa de prototipação do Design Thinking, a equipe:","Cria versões simples da solução para testar e validar","Entrevista usuários apenas","Encerra o projeto","Elabora o relatório financeiro","Define o cronograma da auditoria"],
+["A","A etapa de imersão no Design Thinking tem como foco:","Compreender o contexto e as necessidades do usuário","Construir o produto final","Calcular lucros","Padronizar processos","Apresentar o plano de negócios"],
+["A","Uma característica do Kanban é:","Limitar o trabalho em andamento para melhorar o fluxo","Aumentar tarefas simultâneas sem controle","Eliminar o quadro visual","Substituir a equipe","Proibir o acompanhamento do fluxo"],
+["A","Dashboards são utilizados para:","Apresentar indicadores e resultados de forma visual e resumida","Substituir o mapeamento de processos","Registrar conflitos pessoais","Criar contratos","Definir papéis do Scrum"],
+["A","Indicadores de processo são definidos para:","Monitorar o desempenho e apoiar o replanejamento","Dispensar a análise de dados","Punir colaboradores","Eliminar o plano de ação","Evitar a medição de resultados"],
+["P","O afastamento do trabalho, previsto na legislação trabalhista, ocorre por exemplo em caso de:","Doença ou acidente, com suspensão temporária da atividade","Promoção de cargo","Troca de turno","Aumento de salário","Início do contrato"],
+["P","A aposentadoria é um direito previdenciário que garante:","Renda ao trabalhador após cumprir os requisitos legais","Hora extra permanente","Estabilidade eterna no emprego","Férias coletivas","Redução do salário bruto"],
+["P","O estagiário, segundo a legislação, realiza uma atividade que:","Complementa a formação escolar, com acompanhamento e sem vínculo empregatício comum","Substitui sempre um funcionário efetivo","Dispensa vínculo com a instituição de ensino","Não tem supervisão","É idêntica ao contrato autônomo"],
+["P","O trabalhador autônomo caracteriza-se por:","Exercer a atividade por conta própria, sem subordinação a um empregador","Cumprir horário definido por chefe","Ter carteira assinada obrigatoriamente","Ser sempre aprendiz","Trabalhar apenas por prazo determinado"],
+["P","Uma tendência do futuro do trabalho é:","Surgimento de novas profissões e novas relações de trabalho","Fim de toda necessidade de aprendizado","Eliminação das soft skills","Fim da tecnologia","Padronização total das carreiras"],
+["P","Ao definir metas pessoais, é adequado que elas sejam:","Específicas, mensuráveis e com prazo","Vagas e sem prazo","Impossíveis de medir","Definidas por terceiros sem diálogo","Sempre de curto prazo"],
+["P","O autoconhecimento contribui para o desenvolvimento pessoal porque:","Permite identificar pontos fortes, limitações e valores","Elimina a necessidade de metas","Dispensa o aprendizado contínuo","Evita relacionamentos","Substitui o plano de carreira"],
+["P","O mini currículo é:","Uma versão resumida e objetiva da trajetória profissional","Uma gravação de vídeo","Um contrato de estágio","Um documento de aposentadoria","Uma carta de demissão"],
+["P","A Geração Z é formada por pessoas:","Nascidas em um mundo já digital e conectado","Nascidas no pós-guerra","Anteriores à Geração X","Nascidas antes da internet","Idênticas aos baby boomers"],
+["P","A Geração Alpha corresponde:","Aos nascidos após a Geração Z, em ambiente altamente tecnológico","Aos baby boomers","Aos Millennials","À Geração X","Aos nascidos no século XIX"],
+["P","A inteligência naturalista relaciona-se à capacidade de:","Reconhecer e classificar elementos da natureza","Compor músicas","Resolver cálculos complexos","Dominar movimentos corporais","Interpretar emoções próprias"],
+["P","A inteligência espacial destaca-se na habilidade de:","Visualizar e manipular formas, mapas e espaços","Dominar ritmos e sons","Resolver conflitos","Comunicar-se por palavras","Observar plantas e animais"],
+["P","A inteligência corporal-cinestésica é típica de quem tem:","Habilidade em usar o corpo para se expressar e executar movimentos","Facilidade com sons musicais","Domínio de cálculos lógicos","Percepção de elementos da natureza","Foco apenas em leitura"],
+["P","Em educação financeira, investir significa:","Aplicar recursos esperando retorno futuro, avaliando riscos e prazos","Gastar toda a renda no consumo","Contrair dívidas","Guardar dinheiro sem planejar","Evitar qualquer planejamento"],
+["P","Um bloqueio ou barreira ao processo criativo é:","O medo de errar e de ser julgado","A curiosidade","A abertura a novas ideias","A troca de experiências","A pesquisa de referências"],
+["T","A inovação em serviços pode ser exemplificada por:","Um novo modelo de atendimento ou entrega ao cliente","Apenas a troca da cor da embalagem","A redução do estoque somente","Um novo logotipo","Uma mudança de horário"],
+["T","O processo de inovação tem como etapa de Desenvolvimento:","Transformar a ideia selecionada em solução, protótipo ou projeto","Apenas gerar ideias","Medir resultados finais","Descartar as ideias","Encerrar o ciclo"],
+["T","A etapa de Monitoramento no processo de inovação consiste em:","Acompanhar a implementação e seus indicadores","Gerar a primeira ideia","Produzir o protótipo","Abandonar a ideia","Elaborar a SWOT"],
+["T","O E de ESG (Environmental) trata de:","Impactos ambientais, como uso de recursos e emissões","Relações com comunidade e colaboradores","Ética e transparência na gestão","Garantia de lucros","Estratégia de vendas"],
+["T","O S de ESG (Social) envolve:","Relações com colaboradores, clientes e comunidade, diversidade e direitos","Apenas emissões de carbono","Somente o desempenho financeiro","Regras de auditoria interna","Uso de energia"],
+["T","Uma característica da economia circular é:","Projetar produtos pensando em reuso, reparo e reciclagem","Obsolescência programada incentivada","Descarte linear de resíduos","Uso único de materiais","Aumento de aterros"],
+["T","Uma ação ligada à descarbonização é:","Substituir combustíveis fósseis por fontes de energia renovável","Ampliar queimadas","Aumentar o uso de carvão","Elevar emissões industriais","Ignorar a eficiência energética"],
+["T","Um exemplo de aplicação da IoT na indústria é:","Sensores monitorando máquinas em tempo real","Impressão de documentos em papel","Anotações manuais em quadro","Reunião presencial","Arquivo físico de relatórios"],
+["T","Um exemplo de aplicação da inteligência artificial é:","Sistema que identifica padrões e apoia decisões automaticamente","Uma planilha sem fórmulas","Um mural de papel","Uma agenda impressa","Um carimbo"],
+["T","Uma aplicação da impressão 3D é:","Produzir protótipos e peças personalizadas","Armazenar dados na nuvem","Registrar transações financeiras","Substituir a internet","Gerar energia"],
+["T","Uma aplicação do blockchain é:","Rastrear a origem de produtos com registros seguros","Imprimir peças em camadas","Criar ambientes imersivos","Organizar ideias em mapa","Calcular emissões"],
+["T","Um plano de negócios com foco em sustentabilidade deve considerar:","Impactos ambientais, sociais e econômicos da solução","Somente o lucro imediato","Apenas o preço do concorrente","Nenhum indicador","Somente a divulgação"],
+["T","Uma aplicação da realidade aumentada na indústria é:","Instruções de manutenção sobrepostas ao equipamento real","Isolamento total em ambiente digital","Impressão de peças","Registro em blocos","Armazenamento em nuvem"],
+["T","Um produto que substitui outro de forma radical e abre um novo mercado exemplifica uma inovação:","Disruptiva","Incremental","Apenas de embalagem","De rotina","Sem impacto"],
+["T","A criatividade, no ciclo da inovação, é:","A geração de ideias originais, ponto de partida do ciclo","A implementação no mercado","O monitoramento final","A auditoria","O descarte"],
+["A","Um benefício das metodologias ágeis é:","Maior adaptação a mudanças e entregas frequentes de valor","Ausência de planejamento","Entrega somente ao final","Eliminação da comunicação","Rigidez total do escopo"],
+["A","Um tipo de conflito em equipes é o:","Conflito interpessoal, entre pessoas","Conflito de PDCA","Conflito de Kanban","Conflito de Sprint","Conflito de indicadores"],
+["A","Uma técnica para administrar conflitos é:","Diálogo e negociação, buscando soluções em comum","Ignorar o problema","Punir sem ouvir","Evitar qualquer conversa","Transferir a culpa"],
+["A","A Sprint Planning (planejamento da Sprint) serve para:","Definir o que será entregue na Sprint e como o trabalho será feito","Avaliar o incremento com o cliente","Encerrar o projeto","Fazer a retrospectiva","Auditar o time"],
+["A","A Sprint é:","Um ciclo de duração fixa em que se produz um incremento do produto","Uma reunião diária de 15 minutos","Um papel do Scrum","Uma ferramenta de qualidade","Um tipo de indicador"],
+["A","O Product Backlog é:","A lista priorizada de itens necessários ao produto","Uma reunião da Sprint","O papel do Scrum Master","Um relatório de auditoria","Um quadro de metas"],
+["A","No Design Thinking, a experimentação significa:","Testar hipóteses e soluções, aprendendo com os resultados","Evitar qualquer teste","Seguir um único caminho","Não aceitar feedback","Apenas planejar"],
+["A","O storytelling é utilizado para:","Apresentar ideias e resultados por meio de uma narrativa envolvente","Calcular indicadores","Substituir dados","Realizar auditorias","Definir cronogramas"],
+["A","O mapa mental, no Design Thinking, auxilia a:","Organizar e conectar ideias a partir de um tema central","Calcular custos","Definir papéis","Executar a Sprint","Medir defeitos"],
+["A","O Lean aplicado a processos busca:","Reduzir desperdícios, como esperas, retrabalho e excesso de estoque","Aumentar etapas sem valor","Ampliar o retrabalho","Elevar o tempo de espera","Manter estoques altos"],
+["A","Na etapa D (Do) do PDCA, a equipe:","Executa o plano de ação conforme o planejado","Define metas","Padroniza resultados","Verifica indicadores","Encerra o ciclo"],
+["A","A estratificação é útil, por exemplo, para:","Separar defeitos por turno, máquina ou operador e achar a origem","Misturar todos os dados","Eliminar dados","Calcular salários","Definir cronogramas"],
+["A","No 5W2H, o Why responde:","Por que a ação será realizada","Quem fará","Onde será feita","Quando ocorrerá","Quanto custa"],
+["A","Em relação às metodologias tradicionais, as ágeis costumam ter:","Ciclos curtos e feedback frequente","Fases longas e entrega única","Ausência de clientes","Escopo imutável","Documentação como único foco"],
+["A","Uma capacidade da unidade é validar a eficiência das melhorias, o que significa:","Confirmar com dados se a melhoria funciona antes de incorporá-la ao processo","Dispensar medição","Aplicar sem testar","Ignorar indicadores","Substituir o plano de ação"],
+["L","A netiqueta consiste em:","Boas práticas de conduta e respeito na comunicação online","Regras de segurança de redes sem fio","Técnicas de edição de vídeo","Um tipo de rede social profissional","Um software de apresentação"],
+["L","A comunicação não-violenta busca:","Expressar sentimentos e necessidades com empatia, sem julgar nem agredir","Vencer a discussão a qualquer custo","Evitar qualquer conversa difícil","Impor a opinião de forma firme","Usar apenas comunicação escrita"],
+["L","São exemplos de vícios orais:","Repetição excessiva de expressões como né, tipo e então","Boa dicção","Tom de voz adequado","Ritmo equilibrado","Eloquência"],
+["L","A linguagem corporal na comunicação inclui:","Postura, olhar, vestimenta e gestos","Apenas o tom de voz","Somente a escrita de e-mails","O uso de hashtags","A velocidade da internet"],
+["L","Diante de uma possível fake news, a atitude mais adequada é:","Verificar a fonte e a veracidade antes de compartilhar","Compartilhar rapidamente com todos","Acreditar se vier de um amigo","Ignorar a fonte","Compartilhar se tiver muitas curtidas"],
+["F","A LGPD (Lei Geral de Proteção de Dados) tem como objetivo:","Proteger os dados pessoais e regular seu tratamento","Regular a jornada de trabalho","Definir regras de hardware","Normatizar redes cabeadas","Criar sistemas operacionais"],
+["F","Qual é um periférico de entrada?","Teclado","Monitor","Impressora","Caixa de som","Projetor"],
+["F","Phishing é um golpe digital que:","Usa mensagens falsas para roubar dados e senhas","Acelera a conexão wi-fi","Faz backup automático","Libera espaço no disco","Atualiza o sistema operacional"],
+["F","Na planilha eletrônica, a função SE é uma função:","Lógica, que retorna resultados conforme uma condição","De texto","Estatística apenas","De formatação de células","De impressão"],
+["F","As tabelas dinâmicas servem para:","Resumir e analisar grandes volumes de dados","Proteger o arquivo com senha","Inserir animações","Corrigir a ortografia","Gravar a tela"],
+["Q","As funções da administração são:","Planejamento, organização, liderança e controle","Compra, venda, estoque e entrega","Auditoria, calibração, medição e ensaio","Ideação, protótipo, teste e lançamento","Coleta, registro, arquivo e descarte"],
+["Q","O Diagrama de Pareto é usado para:","Priorizar as poucas causas que geram a maior parte dos problemas","Medir a temperatura","Mostrar o fluxo das etapas","Registrar a presença","Calcular salários"],
+["Q","O Diagrama de causa e efeito (Ishikawa) serve para:","Identificar e organizar as possíveis causas de um problema","Medir a dispersão entre duas variáveis","Listar dados em colunas","Mapear o fluxo do processo","Definir o orçamento"],
+["Q","O histograma representa:","A distribuição de frequência dos dados","A relação entre duas variáveis","O fluxo das atividades","A lista de causas","Um plano de ação"],
+["Q","O planejamento estratégico caracteriza-se por:","Ter foco de longo prazo e abranger toda a organização","Tratar das tarefas diárias de um setor","Ser sempre informal","Tratar só do curto prazo","Não definir objetivos"],
+["M","O paquímetro é um instrumento que permite medir:","Dimensões externas, internas e de profundidade","Somente temperatura","Apenas viscosidade","Somente acidez","Apenas tempo"],
+["M","Qual é um ensaio não destrutivo?","Ultrassom","Tração","Compressão","Torção","Impacto"],
+["M","O ensaio de tração é classificado como:","Ensaio destrutivo","Ensaio não destrutivo","Inspeção visual","Calibração","Líquido penetrante"],
+["M","O erro sistemático é aquele que:","Se repete de forma constante e previsível nas medições","Varia de modo imprevisível","É sempre nulo","Ocorre só em instrumentos digitais","Não afeta o resultado"],
+["M","A resolução de um instrumento de medição é:","A menor variação da grandeza que o instrumento consegue indicar","A tolerância dimensional da peça","O erro aleatório","O prazo da calibração","A capacidade máxima"],
+["D","Os custos de prevenção e avaliação fazem parte dos custos:","Da qualidade","Da não qualidade","De falhas externas","De falhas internas","Somente de marketing"],
+["D","Falhas internas e externas são custos:","Da não qualidade","Da qualidade","De prevenção","De avaliação","De treinamento preventivo"],
+["D","A FMEA é uma ferramenta usada para:","Analisar modos de falha e seus efeitos, avaliando riscos","Calcular o salário líquido","Definir papéis do Scrum","Registrar atas","Elaborar currículos"],
+["D","A ISO 14001 trata de:","Gestão ambiental","Auditoria de sistemas","Gestão de documentos","Segurança da informação","Medição dimensional"],
+["D","Processos de suporte:","Apoiam os processos primários, como RH e manutenção","Entregam valor direto ao cliente","Definem sempre a estratégia","Não afetam o SGQ","Substituem os processos primários"],
+["S","A sigla SMART, aplicada a metas, indica metas:","Específicas, mensuráveis, atingíveis, relevantes e com prazo","Simples, múltiplas, ágeis, rápidas e temporárias","Sistêmicas, médias, aprovadas, revisadas e treinadas","Seguras, modernas, automáticas, remotas e técnicas","Sem prazo definido"],
+["S","O manual da qualidade:","Descreve o SGQ, incluindo escopo, política e processos","Registra a jornada de trabalho","É um relatório financeiro","Substitui todos os procedimentos","É um laudo de calibração"],
+["S","Uma instrução de trabalho apresenta:","O passo a passo detalhado de uma atividade","Apenas a política da qualidade","O orçamento anual","A estratégia da empresa","O cronograma de auditoria"],
+["S","A taxa de defeitos é um indicador de desempenho que mede:","A proporção de itens defeituosos produzidos","A satisfação do cliente","O tempo de ciclo","O custo da qualidade","A carga horária"],
+["S","O LMS (Learning Management System) é usado para:","Gerenciar treinamentos e a aprendizagem dos colaboradores","Controlar o estoque","Calcular indicadores financeiros","Imprimir documentos","Mapear processos"],
+["C","As etapas do DMAIC, do Seis Sigma, são:","Definir, Medir, Analisar, Melhorar e Controlar","Planejar, Fazer, Checar e Agir","Observar, Medir, Auditar, Informar e Corrigir","Definir, Mapear, Agir, Implementar e Concluir","Diagnosticar, Medir, Atuar, Inovar e Certificar"],
+["C","O Poka-Yoke é:","Um dispositivo ou método à prova de erros","Um tipo de auditoria","Um gráfico de controle","Um índice de capacidade","Uma reunião diária"],
+["C","O Kaizen representa:","A melhoria contínua por meio de pequenas mudanças constantes","Uma mudança radical única","O fim da melhoria","Uma técnica de venda","Um relatório de auditoria"],
+["C","O índice Cpk avalia:","A capacidade do processo considerando a centralização em relação aos limites","Apenas o custo do processo","O tempo de ciclo","A satisfação do cliente","A rotatividade de pessoal"],
+["C","A análise dos 5 porquês busca:","Chegar à causa raiz perguntando sucessivamente o porquê do problema","Listar cinco soluções","Medir cinco indicadores","Definir cinco metas","Escolher cinco auditores"],
+["C","A matriz GUT prioriza problemas segundo:","Gravidade, urgência e tendência","Gestão, uso e tempo","Garantia, utilidade e treinamento","Gasto, unidade e tarefa","Grupo, usuário e tecnologia"],
+["U","A ABNT NBR ISO 19011 apresenta:","Diretrizes para a auditoria de sistemas de gestão","Regras de desenho técnico","Normas de segurança digital","Critérios de calibração","Padrões de rotulagem"],
+["U","Uma não conformidade é:","O não atendimento a um requisito","Um item que atende a todos os requisitos","Uma recomendação de melhoria","Um tipo de indicador","Uma etapa do cronograma"],
+["U","São técnicas de auditoria:","Entrevista, observação e inspeção","Brainstorming, SWOT e mapa mental","Kanban, Scrum e Lean","Sprint, backlog e daily","Currículo, coaching e orientação"],
+["U","O plano de auditoria deve conter:","Escopo, objetivos, critérios e cronograma","Apenas o nome do auditor","Somente os resultados finais","O orçamento da empresa","A lista de clientes"],
+["U","Do auditor espera-se comportamento:","Ético, imparcial e profissional","Parcial e informal","Sem regras definidas","Voltado à punição","Alheio aos requisitos"],
+["L","A escuta ativa consiste em:","Prestar atenção plena ao outro, sem interromper, e confirmar o entendimento","Pensar na resposta enquanto o outro fala","Interromper para corrigir","Ouvir apenas o que interessa","Responder sem ouvir até o fim"],
+["L","O cyberbullying é:","A ofensa ou perseguição repetida por meios digitais","Uma técnica de apresentação","Um tipo de rede profissional","Uma ferramenta de design","Uma regra da netiqueta"],
+["L","Um webinar é:","Uma apresentação ou palestra online, ao vivo, para um público remoto","Um tipo de e-mail","Uma plataforma de design","Um podcast gravado sem público","Uma rede social"],
+["L","A dicção refere-se a:","Pronunciar as palavras com clareza","Gesticular durante a fala","Escolher a vestimenta","Definir o ritmo do vídeo","Editar o áudio"],
+["L","No planejamento de uma apresentação, o primeiro passo é definir:","O objetivo e o público-alvo","A cor dos slides","O tipo de fonte","A animação de entrada","O local de armazenamento"],
+["F","A computação em nuvem favorece o trabalho colaborativo porque:","Permite editar e compartilhar arquivos online em grupo","Exige que todos usem o mesmo computador","Funciona apenas sem internet","Impede o compartilhamento","Guarda arquivos só em papel"],
+["F","Um programa malicioso do tipo ransomware:","Sequestra os dados e exige pagamento para liberá-los","Acelera o computador","Faz backup automático","Protege contra vírus","Atualiza o sistema operacional"],
+["F","Em um editor de texto, o sumário automático é gerado a partir de:","Títulos formatados com estilos","Números de página digitados à mão","Imagens do documento","Notas de rodapé","Cores do texto"],
+["F","A formatação condicional na planilha serve para:","Destacar células automaticamente conforme regras definidas","Proteger o arquivo com senha","Inserir vídeos","Imprimir em cores","Criar macros"],
+["F","Os dashboards são:","Painéis visuais que reúnem indicadores e gráficos","Tipos de hardware","Redes cabeadas","Vírus de computador","Periféricos de saída"],
+["Q","Um elemento da cultura da qualidade é:","O comprometimento da alta direção","A ausência de comunicação","O desinteresse com resultados","A falta de feedback","A rotina sem melhoria"],
+["Q","O princípio da tomada de decisão baseada em evidências orienta a:","Decidir com base em dados e informações analisadas","Decidir por intuição apenas","Decidir pela opinião do chefe","Decidir sem registros","Evitar análises"],
+["Q","O Seis Sigma busca:","Reduzir a variabilidade e os defeitos nos processos","Aumentar a variação do processo","Eliminar a medição","Ampliar o estoque","Reduzir a comunicação"],
+["Q","A folha de verificação é usada para:","Coletar e organizar dados de forma simples e padronizada","Calcular a média móvel","Desenhar peças","Mapear riscos","Definir metas"],
+["Q","O housekeeping está ligado a:","Organização, limpeza e disciplina no ambiente de trabalho","Desenho técnico","Cálculo estatístico","Auditoria externa","Calibração de instrumentos"],
+["M","Em comparação com o paquímetro, o micrômetro geralmente oferece:","Maior resolução e precisão em medições pequenas","Menor precisão","Medição de temperatura","Medição de massa","Medição de acidez"],
+["M","A tolerância dimensional é:","A variação permitida na medida de uma peça","O erro do instrumento","A escala do desenho","A cor da peça","A rugosidade"],
+["M","A cotagem em desenho técnico serve para:","Indicar as medidas da peça","Definir o material","Escolher o instrumento","Registrar a calibração","Medir a rugosidade"],
+["M","O rugosímetro mede:","A rugosidade da superfície","A viscosidade","A temperatura","A dureza","O pH"],
+["M","O pHmetro é usado para medir:","A acidez ou alcalinidade de uma solução","A dureza do material","A temperatura","A viscosidade","O tempo"],
+["D","O controle de versão e revisão dos documentos serve para:","Evitar o uso de documentos obsoletos","Eliminar os registros","Aumentar a burocracia","Impedir o acesso","Dispensar a aprovação"],
+["D","A matriz de riscos relaciona:","A probabilidade e o impacto dos riscos","O custo e o prazo","A cor e o formato","Os clientes e os fornecedores","As metas e os cargos"],
+["D","Stakeholders são:","As partes interessadas na organização","Os instrumentos de medição","As normas de segurança","Os indicadores financeiros","Os softwares de planilha"],
+["D","A inspeção dimensional verifica:","As medidas do produto em relação às especificações","Apenas a aparência","A satisfação do cliente","A jornada de trabalho","A política da qualidade"],
+["D","A diversidade e inclusão são aspectos do pilar:","Social do ESG","Ambiental do ESG","De governança do ESG","Do controle estatístico","Da calibração"],
+["S","O setor piloto, na implantação do SGQ, é utilizado para:","Testar a implantação em uma área antes de ampliar","Encerrar o projeto","Dispensar a documentação","Eliminar a política","Evitar o treinamento"],
+["S","A política da qualidade é:","A declaração das intenções e diretrizes da organização quanto à qualidade","Uma lista de preços","Um laudo de ensaio","Uma planilha de custos","Um registro de ponto"],
+["S","Os registros de treinamentos são exemplo de:","Registros da qualidade","Procedimentos","Instruções de trabalho","Políticas","Normas"],
+["S","A meta Reduzir em 10% os defeitos em 6 meses é:","Quantitativa e com prazo definido","Apenas qualitativa","Sem prazo","Impossível de medir","Vaga"],
+["S","A avaliação de eficácia do treinamento verifica:","Se o treinamento atingiu os resultados esperados","Apenas a presença","Somente o local","O custo da sala","O horário"],
+["C","A produção puxada, no Lean, significa produzir:","Conforme a demanda do cliente","Em grande volume sem pedido","Sem planejamento","Apenas para estoque","Sem considerar o fluxo"],
+["C","O Andon é:","Um sinal visual ou sonoro que alerta sobre problemas na produção","Um gráfico de controle","Um índice de capacidade","Uma norma ISO","Uma técnica de entrevista"],
+["C","O Mapeamento do Fluxo de Valor (VSM) serve para:","Visualizar o fluxo e identificar desperdícios","Calcular o Cpk","Planejar auditorias","Escrever manuais","Registrar treinamentos"],
+["C","Os gráficos de controle são usados para:","Monitorar a variação do processo ao longo do tempo","Listar causas de problemas","Definir metas","Mapear o fluxo","Calcular salários"],
+["C","A ação corretiva tem como finalidade:","Eliminar a causa de uma não conformidade para evitar sua repetição","Apenas corrigir o sintoma","Punir o responsável","Ignorar a causa raiz","Arquivar o problema"],
+["U","A auditoria remota é realizada:","À distância, por meios tecnológicos","Somente presencialmente","Sem plano","Sem auditado","Só por documentos impressos"],
+["U","O relatório de auditoria apresenta:","As constatações e recomendações da auditoria","Apenas o nome do auditor","O orçamento anual","A lista de clientes","O manual da qualidade completo"],
+["U","A reunião de resultados da auditoria serve para:","Apresentar as constatações aos envolvidos","Substituir o relatório","Punir os auditados","Definir o salário","Iniciar a produção"],
+["U","A lista de verificação (checklist) auxilia o auditor a:","Garantir que os pontos planejados sejam verificados","Dispensar a coleta de evidências","Aplicar punições","Escolher o auditado","Eliminar o plano"],
+["U","Uma causa comum de conflito é:","Falha na comunicação","Clareza de expectativas","Alinhamento total","Boa gestão","Troca respeitosa de ideias"]
+];
+
+/* Para usar o logotipo oficial: cole entre as aspas o endereço ou data URI da imagem do logotipo SENAI */
+const LOGO="data:image/jpeg;base64,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";
+const UI={P:"🌟",L:"🗣️",F:"💻",T:"🚀",Q:"✅",M:"📏",D:"🔎",S:"📑",C:"♻️",U:"🔍",A:"🛠️"};
+const IR=[[/paquímetro|micrômetro|régua|cotagem|desenho técnico|tolerância|resolução/i,"📏"],[/rugosímetro|rugosidade/i,"🔬"],[/phmetro|acidez/i,"🧪"],[/ultrassom|ensaio|tração/i,"🔧"],[/nuvem|lms/i,"☁️"],[/blockchain/i,"⛓️"],[/impressão 3d/i,"🖨️"],[/iot|internet das coisas/i,"📡"],[/realidade virtual|metaverso/i,"🥽"],[/realidade aumentada/i,"📱"],[/inteligência artificial|machine learning|\(IA\)/i,"🤖"],[/lgpd|phishing|ransomware|malicios/i,"🔒"],[/esg|ambient|economia circular|descarboniz|14001/i,"🌱"],[/scrum|sprint|backlog|daily/i,"🏃"],[/kanban/i,"📋"],[/pdca|dmaic|ciclo/i,"🔄"],[/lean|kaizen|poka|andon|desperd|vsm|produção puxada/i,"🏭"],[/auditor|auditoria|não conformidade|checklist|lista de verificação/i,"🔍"],[/fmea|risco|swot/i,"⚠️"],[/pareto|histograma|dashboard|indicador|gráfico|planilha|big data|tabela dinâmica|cpk|estratifica/i,"📊"],[/brainstorming|brainwriting|criativ|ideia|mapa mental|chapéus/i,"💡"],[/design thinking|prototip|storyboard|empatia|imersão/i,"🎨"],[/currículo|carreira|coaching/i,"💼"],[/financ|invest|dívida|previdência|salário/i,"💰"],[/contrato|hora extra|aposent|estágio|estagiário|aprendiz|jornada|afastamento|autônomo|emprego/i,"👷"],[/eca|estatuto|direitos/i,"⚖️"],[/geração|inteligência|intrapessoal|interpessoal/i,"🧠"],[/comunicação|netiqueta|fake news|escuta|dicção|apresentação|webinar|cyberbullying|vícios|corporal/i,"🗣️"],[/cooperativ|equipe|conflito/i,"🤝"],[/treinamento|aprendizagem/i,"🎓"],[/manual|procedimento|instrução|documento|política|registro/i,"📄"],[/cliente|stakeholder/i,"👥"],[/teclado|periférico|hardware/i,"⌨️"],[/5w2h|plano de ação|meta|smart/i,"📝"]];
+const icon=q=>{const t=q.t+" "+q.r;for(const[r,e]of IR)if(r.test(t))return e;return UI[q.u]||"📘"};
+const COR=["▲","◆","●","■","★"],L="ABCDE";
+const $=id=>document.getElementById(id);
+const sh=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+let study,Q,i,score,streak,hits,tmax,t0,timer,locked,stats,wrong,name;
+
+function show(id){["menu","game","end"].forEach(s=>$(s).classList.toggle("hide",s!==id))}
+function rankLoad(){try{return JSON.parse(localStorage.getItem("saepRank")||"[]")}catch(e){return[]}}
+function rankShow(){const r=rankLoad();
+  const h=r.length?"<table>"+r.map((x,n)=>`<tr><td>${["🥇","🥈","🥉"][n]||n+1+"º"}</td><td>${x.n}</td><td><b>${x.s}</b> pts</td><td>${x.p}%</td><td>${x.u||""}</td></tr>`).join("")+"</table>":"Ainda sem partidas.";
+  $("rank").innerHTML=h;$("rank2").innerHTML=h;
+  $("best").textContent=r.length?`🏆 Melhor: ${r[0].n} · ${r[0].s} pts`:"🏆 Melhor: —"}
+function rankSave(p){if(study)return;try{const r=rankLoad();r.push({n:name,s:score,p,u:$("uc").selectedOptions[0].text.slice(0,28)});r.sort((a,b)=>b.s-a.s);localStorage.setItem("saepRank",JSON.stringify(r.slice(0,5)))}catch(e){}}
+
+function start(){
+  name=$("nome").value.trim()||"Aluno";
+  const uc=$("uc").value;let pool=BANK.filter(q=>uc==="*"||q[0]===uc);
+  Q=sh(pool).slice(0,+$("qtd").value).map(q=>{
+    const opts=sh(q.slice(2)).slice(0,5);
+    return{u:q[0],t:q[1],o:opts,c:opts.indexOf(q[2]),r:q[2]};
+  });
+  study=$("modo").value==="e";tmax=+$("tempo").value;i=0;score=0;streak=0;hits=0;wrong=[];stats={};Q.forEach(q=>stats[q.u]=[0,0]);
+  show("game");ask();
+}
+function ask(){
+  const q=Q[i];locked=false;
+  $("prog").textContent=`Pergunta ${i+1}/${Q.length}`;$("uctag").textContent=UCN[q.u];$("pts").textContent=`${score} pts`;
+  $("pts").textContent=study?"📖 Estudo":`${score} pts`;$("pic").textContent=icon(q);$("q").textContent=q.t;$("fb").textContent="";$("next").classList.add("hide");
+  $("opts").innerHTML=q.o.map((o,k)=>`<button class="opt c${k}" data-k="${k}"><b>${L[k]} ${COR[k]}</b><span>${o}</span></button>`).join("");
+  document.querySelectorAll(".opt").forEach(b=>b.onclick=()=>pick(+b.dataset.k));
+  t0=Date.now();$("fill").style.width="100%";$("fill").style.background="#26d07c";$("fill").parentNode.style.display=study?"none":"";
+  clearInterval(timer);if(study)return;
+  timer=setInterval(()=>{
+    const left=Math.max(0,tmax-(Date.now()-t0)/1000),p=left/tmax*100;
+    $("fill").style.width=p+"%";if(p<30)$("fill").style.background="#e21b3c";
+    if(left<=0)pick(-1);
+  },100);
+}
+function pick(k){
+  if(locked)return;locked=true;clearInterval(timer);
+  const q=Q[i],left=study?0:Math.max(0,tmax-(Date.now()-t0)/1000),ok=k===q.c;
+  stats[q.u][1]++;
+  document.querySelectorAll(".opt").forEach((b,n)=>{b.disabled=true;if(n===q.c)b.classList.add("ok");else b.classList.add("dim")});
+  if(ok){
+    streak++;hits++;stats[q.u][0]++;
+    const gain=study?0:500+Math.round(500*left/tmax)+Math.min(streak-1,5)*50;score+=gain;
+    $("fb").textContent=study?"✅ Correto!":`✅ Correto! +${gain} pontos${streak>1?` · sequência de ${streak} 🔥`:""}`;
+  }else{
+    streak=0;wrong.push(q);
+    $("fb").textContent=k<0?`⏰ Tempo esgotado! Resposta: ${L[q.c]}) ${q.r}`:`❌ Errou! Resposta certa: ${L[q.c]}) ${q.r}`;
+  }
+  $("pts").textContent=study?"📖 Estudo":`${score} pts`;
+  $("next").textContent=i+1<Q.length?"Próxima":"Ver resultado";$("next").classList.remove("hide");$("next").focus();
+}
+function nextQ(){if(!locked)return;i++;i<Q.length?ask():finish()}
+function finish(){
+  const pc=Math.round(hits/Q.length*100);rankSave(pc);rankShow();
+  $("score").textContent=study?`${hits}/${Q.length} acertos`:`${score} pontos`;
+  $("sum").textContent=`${name}, você acertou ${hits} de ${Q.length} (${pc}%). `+(pc>=80?"Excelente! 🏅":pc>=60?"Bom caminho, continue revisando! 📚":"Vale revisar os conteúdos e tentar de novo! 💪");
+  $("byuc").innerHTML=Object.keys(stats).filter(u=>stats[u][1]).map(u=>`<tr><td>${UCN[u]}</td><td>${stats[u][0]}/${stats[u][1]}</td><td>${Math.round(stats[u][0]/stats[u][1]*100)}%</td></tr>`).join("");
+  $("errs").innerHTML=wrong.length?wrong.map(q=>`<div class="err"><b>${q.t}</b><br>✔ ${q.r}</div>`).join(""):"Nenhum erro. Parabéns! 🎉";
+  show("end");
+}
+document.querySelectorAll(".clr").forEach(b=>b.onclick=()=>{if(confirm("Zerar o ranking deste aparelho? Essa ação não pode ser desfeita.")){try{localStorage.removeItem("saepRank")}catch(e){}rankShow()}});
+$("go").onclick=start;$("next").onclick=nextQ;
+const goMenu=()=>{clearInterval(timer);rankShow();show("menu");window.scrollTo(0,0)};
+$("again").onclick=goMenu;
+$("back").onclick=()=>{if(confirm("Voltar ao início? A partida atual será perdida."))goMenu()};
+document.addEventListener("keydown",e=>{
+  if($("game").classList.contains("hide"))return;
+  const k=L.indexOf(e.key.toUpperCase());
+  if(k>=0&&e.key.length===1&&!locked&&k<Q[i].o.length)pick(k);
+  else if(e.key==="Enter"&&locked)nextQ();
+});
+if(LOGO)$("logo").innerHTML=`<img src="${LOGO}" alt="SENAI">`;
+rankShow();
+</script>
+</body>
+</html>
